@@ -2,6 +2,7 @@ import React, { useState, useContext, createContext, useEffect } from 'react';
 import UserContext from './components/UserContext';
 import {BrowserRouter as Router, Switch, Route, Routes, Navigate, useNavigate, json} from 'react-router-dom';
 import './App.css';
+import { Home } from './pages';
 
 function App() {
 
