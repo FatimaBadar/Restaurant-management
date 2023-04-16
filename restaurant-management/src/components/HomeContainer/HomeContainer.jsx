@@ -1,5 +1,5 @@
 import React, { useLayoutEffect, useRef } from 'react';
-import HCImg from './../../assets/home.jpg';
+import HCImg from './../../assets/home.webp';
 import './homecontainer.css';
 import {gsap} from "gsap";
 
