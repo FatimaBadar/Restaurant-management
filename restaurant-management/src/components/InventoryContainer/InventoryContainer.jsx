@@ -44,13 +44,20 @@ function InventoryContainer() {
   const [quantityInput, setQuantityInput] = useState(0);
 
   useEffect(() => {
-    axios.get('http://localhost/restaurant/php/api/inventory.php')
-      .then(response => setData(response.data));
+    refreshInventory();
   }, []);
+
+  function refreshInventory(){
+	axios.get('http://localhost/restaurant/php/api/inventory.php')
+      .then(response => setData(response.data));
+  }
 
   function handleChange(id, quantity) {
     axios.post('http://localhost/restaurant/php/api/inventory.php', { id, quantity })
-      .then(response => setData(response.data));
+      .then(response => {
+		setData(response.data)
+		refreshInventory();
+	  });
   }
 
   function handleAdd() {
@@ -64,6 +71,7 @@ function InventoryContainer() {
         setData(response.data);
         setNameInput('');
         setQuantityInput(0);
+		refreshInventory();
       });
   }
 
@@ -85,7 +93,7 @@ function InventoryContainer() {
 							<StyledTableCell component="th" scope="row">{item.id}</StyledTableCell>
 							<StyledTableCell align="center">{item.name}</StyledTableCell>
 							<StyledTableCell align="center">
-								<input className='input-cont'
+								<input className='inventory-input-cont'
 								type="number"
 								value={item.quantity}
 								onChange={e => handleChange(item.id, e.target.value)}
@@ -96,7 +104,7 @@ function InventoryContainer() {
 					<StyledTableRow sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
 						<StyledTableCell align='left'><Button onClick={handleAdd}>Add Item</Button></StyledTableCell>
 						<StyledTableCell align="center">
-							<input className='input-cont'
+							<input className='inventory-input-cont'
 								type="text"
 								placeholder="Name"
 								value={nameInput}
@@ -104,7 +112,7 @@ function InventoryContainer() {
 							/>
 						</StyledTableCell>
 						<StyledTableCell align="center">
-							<input className='input-cont' 
+							<input className='inventory-input-cont' 
 								type="number"
 								placeholder="Quantity"
 								value={quantityInput}
