@@ -2,7 +2,7 @@ import React, { useState, useContext, createContext, useEffect } from 'react';
 import UserContext from './components/UserContext';
 import {BrowserRouter as Router, Switch, Route, Routes, Navigate, useNavigate, json} from 'react-router-dom';
 import './App.css';
-import { Employee, Home, Inventory } from './pages';
+import { Employee, Home, Inventory, Reservation } from './pages';
 
 function App() {
 
@@ -32,6 +32,7 @@ function App() {
           <Route path='/*' element={<Home />} />
           <Route path='/inventory' element={<Inventory />} />
           <Route path='/employee' element={<Employee />} />
+          <Route path='/reservation' element={<Reservation />} />
         </Routes>
       </Router>
     </UserContext.Provider>
