@@ -4,3 +4,5 @@ export {default as EmployeeContainer} from './EmployeeContainer/EmployeeContaine
 export {default as ReservationContainer} from './ReservationContainer/ReservationContainer';
 export {default as UserReservationContainer} from './UserReservationContainer/UserReservationContainer';
 export {default as MenuContainer} from './MenuContainer/MenuContainer';
+export {default as UserMenuContainer} from './UserMenuContainer/UserMenuContainer';
+export {default as UMHeader} from './UserMenuContainer/UMHeader';

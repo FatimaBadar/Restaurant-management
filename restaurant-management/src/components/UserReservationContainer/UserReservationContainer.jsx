@@ -114,54 +114,6 @@ function UserReservationContainer () {
 					</div>
 				</div>
 		</div>
-		{/* <div className="ur-container">
-			<img className='urbg-img' src={URImg} alt="background" />
-			<div className="urimg-shadow"></div>
-			<h1>Reservation Page</h1>
-		</div>
-		<div className='ur-main'>
-			<form onSubmit={handleSubmit}>
-				<label htmlFor="date">Date</label>
-				<input type="date" id="date" value={date} min={new Date().toISOString().split('T')[0]} onChange={(e) => setDate(e.target.value)} />
-				<br/>
-				<label htmlFor="time">Time</label>
-				<input type="time" id="time" value={time} min="09:00" max="22:00" onChange={(e) => setTime(e.target.value)} />
-				<br/>
-				<label htmlFor="location">Location</label>
-				<select id="location" value={location} onChange={(e) => setLocation(e.target.value)}>
-				<option value="">-- Select location --</option>
-				<option value="ground">Ground</option>
-				<option value="roof">Roof</option>
-				</select>
-				<br/>
-				<label htmlFor="numTables">Number of Tables</label>
-				<input
-				type="number"
-				id="numTables"
-				value={numTables}
-				min="1" max="20"
-				onChange={(e) => setNumTables(e.target.value)}
-				/>
-				<br/>
-				<label htmlFor="floorBooking">Floor Booking</label>
-				<input
-				type="checkbox"
-				id="floorBooking"
-				checked={isFloorBooking}
-				onChange={(e) => setIsFloorBooking(e.target.checked)}
-				/>
-				<br/>
-				<label htmlFor="customerName">Customer Name</label>
-				<input
-				type="text"
-				id="customerName"
-				value={customerName}
-				onChange={(e) => setCustomerName(e.target.value)}
-				/>
-				<br/>
-				<button type="submit">Book Reservation</button>
-			</form>
-		</div> */}
 	</>
   );
 };
