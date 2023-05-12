@@ -1,8 +1,9 @@
 .ur-background{
     width: 100vw;
-    height: 100vh;
+    height: 150vh;
     position: relative;
     overflow: hidden;
+    margin-top: -10%;
 }
 
 .ur-bg-img{
