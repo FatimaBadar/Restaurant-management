@@ -1,0 +1,12 @@
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+#restaurantlogo{
+    border-radius: 25%;
+    height: 45px;
+    width: 48px;
+    /* height="45" width="48" */
+}
