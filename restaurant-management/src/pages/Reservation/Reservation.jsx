@@ -1,10 +1,13 @@
 import React from "react";
-import { ReservationContainer } from "../../components";
+import { ReservationContainer, Ufooter } from "../../components";
+import Cart from "../Header";
 
 function Reservation(){
     return(
         <>
+            <Cart />
             <ReservationContainer />
+            <Ufooter />
         </>
 
     );

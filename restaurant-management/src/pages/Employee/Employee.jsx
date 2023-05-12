@@ -1,10 +1,14 @@
 import React from "react";
-import { EmployeeContainer } from "../../components";
+import { EmployeeContainer, Ufooter } from "../../components";
+import Cart from "../Header";
+
 
 function Employee(){
     return(
         <>
+            <Cart />
             <EmployeeContainer />
+            <Ufooter />
         </>
 
     );

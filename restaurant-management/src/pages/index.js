@@ -5,3 +5,4 @@ export { default as Reservation } from "./Reservation/Reservation";
 export { default as UserReservation } from "./UserReservation/UserReservation";
 export { default as Menu } from "./Menu/Menu";
 export { default as UserMenu } from "./UserMenu/UserMenu";
+export { default as Cart } from './Header';

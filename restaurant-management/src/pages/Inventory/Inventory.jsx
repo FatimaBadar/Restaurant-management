@@ -1,10 +1,13 @@
 import React from "react";
-import { InventoryContainer } from "../../components";
+import { InventoryContainer , Ufooter} from "../../components";
+import Cart from "../Header";
 
 function Inventory(){
     return(
         <>
+            <Cart />
             <InventoryContainer />
+            <Ufooter />
         </>
 
     );
