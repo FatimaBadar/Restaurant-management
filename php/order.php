@@ -7,23 +7,19 @@ $servername = "localhost";
 $uname="root";
 $pword ="";
 $dbname="restaurant";
-
-// $userid = $_POST["userid"];
-
 $conn =mysqli_connect($servername, $uname, $pword,$dbname);
 
 if ($conn -> connect_error){
     die("connection failed:".mysqli_connect_error());
 }
+session_start();
 
-$foodname = "";
-$price = $quantity = 0;
+$discount = "";
+$status = $type = "";
 
-$methord = $_SERVER['REQUEST_METHOD'];
+$sql = "SELECT discount, status, price, type from ordercart";
 
-if($methord=="GET"){
-    $sql = "SELECT CartID, foodname, price, quantity from ordercart";
-    $result = mysqli_query($conn, $sql);
+$result = mysqli_query($conn, $sql);
 
 if(mysqli_num_rows($result) > 0){
     $cart = array();
@@ -34,7 +30,6 @@ if(mysqli_num_rows($result) > 0){
 }
 else{
     echo json_encode(array());
-}
 }
 
 mysqli_close($conn);

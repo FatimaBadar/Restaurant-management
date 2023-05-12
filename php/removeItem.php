@@ -7,34 +7,25 @@ $servername = "localhost";
 $uname="root";
 $pword ="";
 $dbname="restaurant";
-
-// $userid = $_POST["userid"];
-
 $conn =mysqli_connect($servername, $uname, $pword,$dbname);
 
 if ($conn -> connect_error){
     die("connection failed:".mysqli_connect_error());
 }
+session_start();
 
-$foodname = "";
-$price = $quantity = 0;
+$CartID ="";
 
 $methord = $_SERVER['REQUEST_METHOD'];
+if($methord=="POST"){
+    $data = json_decode(file_get_contents('php://input'));
+    $CartID = $data->CartID;    
 
-if($methord=="GET"){
-    $sql = "SELECT CartID, foodname, price, quantity from ordercart";
-    $result = mysqli_query($conn, $sql);
-
-if(mysqli_num_rows($result) > 0){
-    $cart = array();
-    while($row = mysqli_fetch_assoc($result)){
-        $cart[] = $row;
+    $sql = "DELETE from ordercart where CartID = '$CartID'";
+    if(mysqli_query($conn, $sql)){
+        echo "Successfully updated the cart";
     }
-    echo json_encode($cart);
-}
-else{
-    echo json_encode(array());
-}
+
 }
 
 mysqli_close($conn);

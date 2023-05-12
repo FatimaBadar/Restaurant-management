@@ -8,29 +8,27 @@ $uname="root";
 $pword ="";
 $dbname="restaurant";
 
-// $userid = $_POST["userid"];
-
 $conn =mysqli_connect($servername, $uname, $pword,$dbname);
 
 if ($conn -> connect_error){
     die("connection failed:".mysqli_connect_error());
 }
 
-$foodname = "";
+$foodname = $foodcount = "";
 $price = $quantity = 0;
 
 $methord = $_SERVER['REQUEST_METHOD'];
 
 if($methord=="GET"){
-    $sql = "SELECT CartID, foodname, price, quantity from ordercart";
+    $sql = "SELECT CartID, foodname, price, count(foodname) as foodcount from ordercart";
     $result = mysqli_query($conn, $sql);
 
 if(mysqli_num_rows($result) > 0){
-    $cart = array();
+    $report = array();
     while($row = mysqli_fetch_assoc($result)){
-        $cart[] = $row;
+        $report[] = $row;
     }
-    echo json_encode($cart);
+    echo json_encode($report);
 }
 else{
     echo json_encode(array());
