@@ -63,9 +63,12 @@ export default function Header(props) {
                 <Link className="nav-link" to="/usermenu">
                   Menu
                 </Link>
+                {loggedin && (  
                 <Link className="nav-link" to="/userreservation">
                   Reserve Now
                 </Link>
+                )}
+                
               </div>
               <div className="navbar-nav ms-auto">
                 {!loggedin && (
