@@ -20,7 +20,8 @@ $price = $quantity = 0;
 $methord = $_SERVER['REQUEST_METHOD'];
 
 if($methord=="GET"){
-    $sql = "SELECT CartID, foodname, price, count(foodname) as foodcount from ordercart";
+    $sql = "SELECT CartID, foodname, price, count(foodname) as foodcount from ordercart
+group by foodname";
     $result = mysqli_query($conn, $sql);
 
 if(mysqli_num_rows($result) > 0){
