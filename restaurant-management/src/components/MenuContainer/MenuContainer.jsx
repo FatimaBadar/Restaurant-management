@@ -94,6 +94,7 @@ function MenuContainer() {
         itemCalories: itemCalories,
         itemImage: itemImage,
         itemPrepTime: itemPrepTime,
+        itemCuisine: itemCuisine,
       })
       .then((response) => {
         if (response.data.status === "success") {
@@ -115,10 +116,10 @@ function MenuContainer() {
       });
   }
 
-  function handleDelete(Iid) {
-    let id = Iid;
+  function handleDelete(x) {
+    let id = x;
     axios
-      .delete("http://localhost:80/api/menu.php", { menu: { id: id } })
+      .delete("http://localhost:80/api/menu.php", { data: { ID: id } })
       .then(function (response) {
         console.log(response.data);
         refreshmenu();
@@ -188,7 +189,9 @@ function MenuContainer() {
                 <StyledTableCell align="center">
                   {item.calories}
                 </StyledTableCell>
-                <StyledTableCell align="center">{item.image}</StyledTableCell>
+                <StyledTableCell align="center">
+                  {item.image && <img src={item.image} alt={item.name} />}
+                </StyledTableCell>
                 <StyledTableCell align="center">
                   {item.timeframe}
                 </StyledTableCell>

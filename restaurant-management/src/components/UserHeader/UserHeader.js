@@ -25,14 +25,14 @@ export default function Header(props) {
     localStorage.removeItem("userid");
     localStorage.clear();
     setLoggedin(false);
-    navigate("/*");
+    // navigate("/");
   };
 
   return (
     <header>
       <div className="container">
         <nav
-          className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top"
+          className="navbar navbar-expand-lg navbar-dark bg-dark"
           data-bs-theme="dark"
         >
           {/* <nav className="navbar navbar-expand-lg bg-body-tertiary"> */}
@@ -56,19 +56,16 @@ export default function Header(props) {
                 <Link
                   className="nav-link active"
                   aria-current="page"
-                  to="/*"
+                  to="/home"
                 >
                   Home
                 </Link>
                 <Link className="nav-link" to="/usermenu">
                   Menu
                 </Link>
-                {loggedin && (  
                 <Link className="nav-link" to="/userreservation">
                   Reserve Now
                 </Link>
-                )}
-                
               </div>
               <div className="navbar-nav ms-auto">
                 {!loggedin && (
@@ -77,16 +74,12 @@ export default function Header(props) {
                   </Link>
                 )}
 
+                <Link className="nav-link" to="/settings">
+                  Settings
+                </Link>
                 <Link className="nav-link" to="/cart">
                   Cart
                 </Link>
-                
-                {loggedin && (  
-                  <Link className="nav-link" to="/settings">
-                    Settings
-                  </Link>
-                )}
-                
                 {loggedin && (
                   <span className="nav-link" onClick={LogoutFunc}>
                     Logout

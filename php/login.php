@@ -1,4 +1,5 @@
 <?php
+session_start();
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET, POST');
 header('Access-Control-Allow-Headers: X-Requested-With, Access-Control-Allow-Headers, Authorization, content-type');
@@ -12,7 +13,7 @@ $conn =mysqli_connect($servername, $uname, $pword,$dbname);
 if ($conn -> connect_error){
     die("connection failed:".mysqli_connect_error());
 }
-session_start();
+
 
 $firstname = $lastname = $username = $email = "";
 $password = $confirmpassword = $gender = "";

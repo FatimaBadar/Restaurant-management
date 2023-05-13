@@ -1,4 +1,5 @@
 <?php
+session_start();
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 header("Access-Control-Allow-Origin: *");
@@ -35,8 +36,7 @@ switch($methord){
         break;
     case "DELETE":
         $data = json_decode( file_get_contents('php://input') );
-        echo $data;
-        $id = $data->id; 
+        $id = $data->ID; 
         $sql = "DELETE FROM food WHERE FoodID = '$id'";
         $stmt = $conn->prepare($sql);
         $stmt->execute();
