@@ -24,7 +24,7 @@ export default function Header(props) {
     localStorage.removeItem("userid");
     localStorage.clear();
     setLoggedin(false);
-    navigate("/Header");
+    navigate("/*");
   };
 
   return (
@@ -52,7 +52,7 @@ export default function Header(props) {
             </button>
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div className="navbar-nav">
-                <Link className="nav-link active" aria-current="page" to="/">
+                <Link className="nav-link active" aria-current="page" to="/*">
                   Home
                 </Link>
                 {/* <Link className="nav-link" to="/usermenu">Menu</Link> */}

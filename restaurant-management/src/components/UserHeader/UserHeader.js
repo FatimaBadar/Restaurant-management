@@ -25,7 +25,7 @@ export default function Header(props) {
     localStorage.removeItem("userid");
     localStorage.clear();
     setLoggedin(false);
-    // navigate("/");
+    navigate("/*");
   };
 
   return (
@@ -56,7 +56,7 @@ export default function Header(props) {
                 <Link
                   className="nav-link active"
                   aria-current="page"
-                  to="/home"
+                  to="/*"
                 >
                   Home
                 </Link>
@@ -74,12 +74,16 @@ export default function Header(props) {
                   </Link>
                 )}
 
-                <Link className="nav-link" to="/settings">
-                  Settings
-                </Link>
                 <Link className="nav-link" to="/cart">
                   Cart
                 </Link>
+                
+                {loggedin && (  
+                  <Link className="nav-link" to="/settings">
+                    Settings
+                  </Link>
+                )}
+                
                 {loggedin && (
                   <span className="nav-link" onClick={LogoutFunc}>
                     Logout
