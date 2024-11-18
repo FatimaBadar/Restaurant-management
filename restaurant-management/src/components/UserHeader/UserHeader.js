@@ -30,7 +30,7 @@ export default function Header(props) {
 
   return (
     <header>
-      <div className="container">
+      <div>
         <nav
           className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top"
           data-bs-theme="dark"
