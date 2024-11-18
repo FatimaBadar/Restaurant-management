@@ -1,3 +1,6 @@
+body{
+    background-color: #ebe9e6;
+}
 .row{
     margin-top: 80px ;
     width: 100%;
@@ -14,13 +17,20 @@
     /* margin-bottom: 100px; */
     position: relative;
     margin-bottom: 320px;
+
+    background-color: #e1e1e1;
+    border-color: #e1e1e1;
+    border-width: 2px;
+    box-shadow: 1px 1px 2px #888888;
+
 }
 
 .tablebody{
-    background-color: #ebe9e6;
+    /* background-color: #ebe9e6; */
     margin-top: 80px;
     padding: 50px;
     width: 800px;
+
 }
 
 button{

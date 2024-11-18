@@ -24,14 +24,14 @@ export default function Header(props) {
     localStorage.removeItem("userid");
     localStorage.clear();
     setLoggedin(false);
-    navigate("/Header");
+    navigate("/*");
   };
 
   return (
     <header>
-      <div className="container">
+      <div>
         <nav
-          className="navbar navbar-expand-lg navbar-dark bg-dark"
+          className="navbar navbar-expand-lg navbar-dark bg-dark sticky-top"
           data-bs-theme="dark"
         >
           {/* <nav className="navbar navbar-expand-lg bg-body-tertiary"> */}
@@ -52,7 +52,7 @@ export default function Header(props) {
             </button>
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
               <div className="navbar-nav">
-                <Link className="nav-link active" aria-current="page" to="/">
+                <Link className="nav-link active" aria-current="page" to="/*">
                   Home
                 </Link>
                 <Link className="nav-link" to="/usermenu">
