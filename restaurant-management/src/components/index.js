@@ -7,3 +7,5 @@ export { default as MenuContainer } from "./MenuContainer/MenuContainer";
 export { default as UserMenuContainer } from "./UserMenuContainer/UserMenuContainer";
 export { default as UMHeader } from "./UserMenuContainer/UMHeader";
 export { default as MenuCard } from "./UserMenuContainer/MenuCard";
+export { default as Ufooter } from "./Footer/footer";
+
